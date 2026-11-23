@@ -5,42 +5,115 @@
 
 const SITE_DATA = {
   // 1. Points de la carte interactive (Leaflet)
+  // 1A. Polygones réels de la carte (calés sur Guitrancourt Est)
+  mapPolygons: [
+    {
+      layer: "icpe",
+      name: "Emprise ICPE — Carrière actuelle (Zones 1 & 2)",
+      tag: "Heidelberg Materials (ex-Calcia)",
+      label: "Carrière / ICPE (112,6 ha)",
+      labelCoords: [49.0126, 1.7878],
+      style: { color: "#dc2626", weight: 2.5, dashArray: "6, 5", fillColor: "#dc2626", fillOpacity: 0.12 },
+      description: "Périmètre total de 112,6 ha (103,1 ha d'ancienne carrière calcaire exploitée jusqu'en 2021). Zone 1 (nord-ouest) : remblayage de 900 000 m³ pour remise en état.",
+      coords: [
+        [49.0148, 1.7875], [49.0132, 1.7898], [49.0110, 1.7905],
+        [49.0096, 1.7924], [49.0108, 1.7945], [49.0095, 1.7988],
+        [49.0066, 1.7992], [49.0046, 1.7955], [49.0056, 1.7916],
+        [49.0038, 1.7896], [49.0014, 1.7874], [49.0026, 1.7844],
+        [49.0046, 1.7866], [49.0068, 1.7888], [49.0086, 1.7892],
+        [49.0105, 1.7875], [49.0108, 1.7845], [49.0130, 1.7852]
+      ]
+    },
+    {
+      layer: "isdi",
+      name: "Projet ISDI — Zone 2 (Guitrancourt 2)",
+      tag: "Déchets inertes",
+      label: "ISDI Zone 2 (28,8 ha)",
+      labelCoords: [49.0082, 1.7952],
+      style: { color: "#2563eb", weight: 2.5, fillColor: "#3b82f6", fillOpacity: 0.22 },
+      description: "Installation de Stockage de Déchets Inertes prévue sur 28,8 ha (3 000 000 m³ de matériaux, notamment issus des chantiers du Grand Paris).",
+      coords: [
+        [49.0102, 1.7940], [49.0096, 1.7978], [49.0072, 1.7985],
+        [49.0060, 1.7952], [49.0064, 1.7924], [49.0085, 1.7928]
+      ]
+    },
+    {
+      layer: "extension",
+      name: "Extension ISDI (Sud Zone 2)",
+      tag: "Extension 9,5 ha",
+      label: "Extension (9,5 ha)",
+      labelCoords: [49.0056, 1.7952],
+      style: { color: "#e11d48", weight: 1.8, fillColor: "#f43f5e", fillOpacity: 0.45 },
+      description: "Extension de 9,5 ha sur d'anciennes parcelles réhabilitées afin de réaliser l'ISDI en Zone 2.",
+      coords: [
+        [49.0064, 1.7924], [49.0060, 1.7952], [49.0068, 1.7974],
+        [49.0050, 1.7966], [49.0047, 1.7938], [49.0056, 1.7918]
+      ]
+    },
+    {
+      layer: "emta",
+      name: "Site EMTA (SARPI-Veolia) — Les Croix Blanches",
+      tag: "ISDD • Déchets dangereux",
+      label: "EMTA / Veolia (ISDD)",
+      labelCoords: [49.0068, 1.7885],
+      style: { color: "#7c3aed", weight: 2.5, fillColor: "#8b5cf6", fillOpacity: 0.32 },
+      description: "Installation mitoyenne à la carrière : passage visé de 200 000 à 250 000 t/an (max 300 000 t/an) jusqu'en 2040 + unité provisoire de stabilisation (50 000 t/an).",
+      coords: [
+        [49.0102, 1.7890], [49.0086, 1.7916], [49.0055, 1.7892],
+        [49.0038, 1.7866], [49.0056, 1.7852], [49.0084, 1.7870]
+      ]
+    }
+  ],    
+
+  // 1B. Points géographiques (Bourg, eau et sites voisins)
   mapPoints: [
     {
-      layer: "communes",
+      layer: "bourg",
       name: "Bourg de Guitrancourt",
-      coords: [49.0095, 1.7765],
-      description: "Commune rurale d'environ 646 habitants au cœur de la controverse."
+      tag: "646 habitants",
+      coords: [49.0094, 1.7778],
+      color: "#1b4332",
+      description: "Cœur du village rural, situé entre 300 m et 600 m à l'ouest des emprises industrielles."
     },
     {
-      layer: "sites",
-      name: "Site EMTA (Veolia) — Les Croix Blanches",
-      coords: [48.9990, 1.7730],
-      description: "ISDD : projet d'augmentation de tonnage et unité de stabilisation provisoire."
+      layer: "context",
+      name: "Captage d'eau potable (AEP) de Gargenville",
+      tag: "Enjeu hydrogéologique",
+      coords: [48.9965, 1.8050],
+      color: "#d97706",
+      description: "Captage alimenté par la nappe de la Craie, situé à ~1,5 km au sud-est à l'aval hydraulique."
     },
     {
-      layer: "sites",
-      name: "Carrière / Site Heidelberg Materials",
-      coords: [49.0025, 1.7660],
-      description: "Ancienne carrière calcaire : projet de remblaiement par déchets inertes (ISDI)."
+      layer: "context",
+      name: "Ancienne carrière des Blancs Soleils",
+      tag: "Mémoire industrielle",
+      coords: [48.9989, 1.7642],
+      color: "#d97706",
+      description: "Autre ancienne carrière à proximité immédiate au sud-ouest de Guitrancourt."
     },
     {
-      layer: "sites",
-      name: "Site de Limay (Zone portuaire)",
+      layer: "context",
+      name: "Unité EMTA / Limay (Zone portuaire)",
+      tag: "Site saturé",
       coords: [48.9830, 1.7350],
-      description: "Site voisin arrivé à saturation, justifiant le report vers Guitrancourt."
+      color: "#d97706",
+      description: "La saturation de l'unité de stabilisation de Limay est l'argument clé justifiant le report vers Guitrancourt."
     },
     {
-      layer: "communes",
-      name: "Issou (commune limitrophe)",
+      layer: "context",
+      name: "Ancien site SITA (Brueil-en-Vexin)",
+      tag: "Cumul territorial",
+      coords: [49.0260, 1.8120],
+      color: "#d97706",
+      description: "Ancienne installation de stockage de déchets non dangereux (fermée en 2014), illustrant le cumul historique sur le secteur."
+    },
+    {
+      layer: "context",
+      name: "Commune d'Issou",
+      tag: "Commune limitrophe",
       coords: [48.9890, 1.7920],
-      description: "Commune voisine concernée par les flux routiers et la proximité des sites."
-    },
-    {
-      layer: "sensible",
-      name: "Secteur patrimonial & nappes (à préciser)",
-      coords: [49.0060, 1.7840],
-      description: "Zone sensible : enjeux liés à l'eau et au menhir néolithique (avis ABF)."
+      color: "#52606d",
+      description: "Commune voisine concernée par les accès routiers et la limite sud de la carrière."
     }
   ],
 

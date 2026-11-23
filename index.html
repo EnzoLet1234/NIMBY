@@ -92,32 +92,63 @@
         <div class="section-header reveal">
           <span class="section-tag">01 • Spatialisation du conflit</span>
           <h2>Le « BackYard » sous tension</h2>
-          <p>Visualisez la proximité entre le bourg rural, les zones naturelles et l'accumulation des installations industrielles.</p>
+          <p>Explorez les emprises réelles (ICPE, ISDI, extension et site EMTA) en vue satellite ou plan. Cliquez sur une zone pour afficher ses données.</p>
         </div>
 
         <div class="map-wrapper reveal">
           <aside class="map-sidebar">
-            <h3>Couches cartographiques</h3>
-            <p class="map-hint">Filtrez les éléments pour observer l'effet de saturation territoriale.</p>
+            <!-- Sélecteur de vue rapide -->
+            <div class="map-control-group">
+              <h3>Échelle d'observation</h3>
+              <div class="map-zoom-btns">
+                <button type="button" class="map-zoom-btn active" data-view="quarry">Carrière & Bourg</button>
+                <button type="button" class="map-zoom-btn" data-view="territory">Territoire (Limay–Vexin)</button>
+              </div>
+            </div>
 
-            <div class="map-filters">
-              <label class="filter-check">
-                <input type="checkbox" class="map-layer-toggle" value="sites" checked />
-                <span class="dot dot-danger"></span> Sites de déchets & carrières
-              </label>
-              <label class="filter-check">
-                <input type="checkbox" class="map-layer-toggle" value="communes" checked />
-                <span class="dot dot-primary"></span> Communes riveraines
-              </label>
-              <label class="filter-check">
-                <input type="checkbox" class="map-layer-toggle" value="sensible" checked />
-                <span class="dot dot-warning"></span> Points sensibles (eau, patrimoine)
-              </label>
+            <!-- Bascule Satellite / Plan -->
+            <div class="map-control-group">
+              <h3>Fond de carte</h3>
+              <div class="map-zoom-btns">
+                <button type="button" class="map-basemap-btn active" data-basemap="satellite">Satellite</button>
+                <button type="button" class="map-basemap-btn" data-basemap="plan">Plan routier</button>
+              </div>
+            </div>
+
+            <!-- Filtres de couches -->
+            <div class="map-control-group">
+              <h3>Couches & Emprises</h3>
+              <div class="map-filters">
+                <label class="filter-check">
+                  <input type="checkbox" class="map-layer-toggle" value="icpe" checked />
+                  <span class="swatch swatch-icpe"></span> Emprise ICPE / Carrière (112,6 ha)
+                </label>
+                <label class="filter-check">
+                  <input type="checkbox" class="map-layer-toggle" value="isdi" checked />
+                  <span class="swatch swatch-isdi"></span> Projet ISDI Zone 2 (28,8 ha)
+                </label>
+                <label class="filter-check">
+                  <input type="checkbox" class="map-layer-toggle" value="extension" checked />
+                  <span class="swatch swatch-ext"></span> Extension ISDI (9,5 ha)
+                </label>
+                <label class="filter-check">
+                  <input type="checkbox" class="map-layer-toggle" value="emta" checked />
+                  <span class="swatch swatch-emta"></span> Site EMTA / Veolia (ISDD)
+                </label>
+                <label class="filter-check">
+                  <input type="checkbox" class="map-layer-toggle" value="bourg" checked />
+                  <span class="dot dot-primary"></span> Bourg & rayons (500 m / 2 km)
+                </label>
+                <label class="filter-check">
+                  <input type="checkbox" class="map-layer-toggle" value="context" checked />
+                  <span class="dot dot-warning"></span> Enjeux eau & sites voisins
+                </label>
+              </div>
             </div>
 
             <div class="map-legend-box">
-              <strong>Note d'analyse :</strong>
-              <p>Texte de synthèse à compléter sur la logique géographique du NIMBY (distances, flux routiers depuis le Grand Paris, saturation de Limay).</p>
+              <strong>Lecture NIMBY :</strong>
+              <p>Les premières habitations du bourg se situent à moins de 500 m de la carrière, au cœur d'un maillage reliant Gargenville, Issou et Limay.</p>
             </div>
           </aside>
 
@@ -183,7 +214,7 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">04 • Dynamique temporelle</span>
-          <h2>Chronologie d'une escalade test12121</h2>
+          <h2>Chronologie d'une escalade</h2>
           <p>Les étapes clés qui ont transformé un dossier technique ICPE en controverse médiatique et politique.</p>
         </div>
 

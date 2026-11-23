@@ -406,3 +406,109 @@
   .map-sidebar { border-right: none; border-bottom: 1px solid var(--border); }
   .arena-comparison { grid-template-columns: 1fr; }
 }
+
+/* === Améliorations Carte SIG === */
+.map-control-group h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.map-zoom-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.map-zoom-btn, .map-basemap-btn {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-page);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.map-zoom-btn.active, .map-basemap-btn.active {
+  background: var(--primary);
+  color: var(--text-light);
+  border-color: var(--primary);
+}
+
+/* Pastilles de légende fidèles à la carte SIG */
+.swatch {
+  width: 16px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.swatch-icpe {
+  border: 2px dashed #dc2626;
+  background: rgba(220, 38, 38, 0.12);
+}
+
+.swatch-isdi {
+  border: 2px solid #2563eb;
+  background: rgba(37, 99, 235, 0.16);
+}
+
+.swatch-ext {
+  border: 1px solid #e11d48;
+  background: rgba(244, 63, 94, 0.45);
+}
+
+.swatch-emta {
+  border: 2px solid #7c3aed;
+  background: rgba(124, 58, 237, 0.3);
+}
+
+/* Popups Leaflet personnalisés */
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  box-shadow: var(--shadow-md);
+}
+
+.map-popup h4 {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  margin-bottom: 0.35rem;
+  color: var(--bg-dark);
+}
+
+.map-popup-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: var(--bg-alt);
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+}
+
+.map-popup p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.map-label-tooltip {
+  background: rgba(17, 24, 39, 0.82);
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 7px;
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
