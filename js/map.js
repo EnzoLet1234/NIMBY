@@ -100,24 +100,41 @@ document.addEventListener("DOMContentLoaded", () => {
     .addTo(layerGroups.emta);
 
   // 2. Cercles de distance NIMBY autour du bourg (500 m et 2 km)
+  // 2. Cercles de distance NIMBY autour du bourg (500 m et 2 km) bien lisibles
   L.circle([49.0094, 1.7778], {
     radius: 500,
-    color: "#1b4332",
-    weight: 1.5,
-    dashArray: "4, 5",
-    fillColor: "#1b4332",
-    fillOpacity: 0.06,
+    color: "#34d399",
+    weight: 2,
+    dashArray: "5, 5",
+    fillColor: "#34d399",
+    fillOpacity: 0.08,
     interactive: false
   }).addTo(layerGroups.bourg);
+
+  L.marker([49.0138, 1.7778], { opacity: 0, interactive: false })
+    .bindTooltip("Rayon 500 m", {
+      permanent: true,
+      direction: "center",
+      className: "map-distance-tooltip"
+    })
+    .addTo(layerGroups.bourg);
 
   L.circle([49.0094, 1.7778], {
     radius: 2000,
     color: "#ffffff",
-    weight: 1.2,
-    dashArray: "4, 6",
+    weight: 1.5,
+    dashArray: "5, 7",
     fillOpacity: 0,
     interactive: false
   }).addTo(layerGroups.bourg);
+
+  L.marker([49.0135, 1.8032], { opacity: 0, interactive: false })
+    .bindTooltip("Rayon 2 km", {
+      permanent: true,
+      direction: "center",
+      className: "map-distance-tooltip"
+    })
+    .addTo(layerGroups.bourg);
 
   // 3. Rendu des points repères
   SITE_DATA.mapPoints.forEach((pt) => {
@@ -131,6 +148,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     marker.bindPopup(buildPopupHtml(pt));
+
+    // Affiche le nom du bourg directement sur la carte
+    if (pt.layer === "bourg") {
+      marker.bindTooltip("Guitrancourt (646 hab.)", {
+        permanent: true,
+        direction: "bottom",
+        offset: [0, 8],
+        className: "map-label-tooltip"
+      });
+    }
+
     if (layerGroups[pt.layer]) marker.addTo(layerGroups[pt.layer]);
   });
 

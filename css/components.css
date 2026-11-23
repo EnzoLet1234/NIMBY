@@ -541,3 +541,16 @@
   70% { box-shadow: 0 0 0 14px rgba(124, 58, 237, 0); }
   100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
 }
+
+/* Étiquettes légères pour le bourg et les cercles de distance */
+.map-distance-tooltip {
+  background: rgba(27, 67, 50, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
