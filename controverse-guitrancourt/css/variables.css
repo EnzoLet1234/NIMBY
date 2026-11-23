@@ -1,0 +1,36 @@
+:root {
+  /* Palette éditoriale sobre & territoriale */
+  --bg-page: #f8f7f4;
+  --bg-surface: #ffffff;
+  --bg-alt: #efede8;
+  --bg-dark: #111827;
+
+  --text-main: #1f2937;
+  --text-muted: #52606d;
+  --text-light: #f9fafb;
+
+  /* Couleurs sémantiques */
+  --primary: #1b4332;       /* Vert territoire / Vexin */
+  --primary-light: #d8f3dc;
+  --accent: #d97706;        /* Ambre / friction */
+  --accent-light: #fef3c7;
+  --danger: #b91c1c;        /* Alerte / risques */
+  --danger-light: #fee2e2;
+
+  --border: #e2dfd7;
+
+  /* Typographie */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Espacements & Rayons */
+  --container-max: 1180px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  /* Ombres & Transitions */
+  --shadow-sm: 0 2px 8px rgba(17, 24, 39, 0.05);
+  --shadow-md: 0 10px 30px rgba(17, 24, 39, 0.08);
+  --transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
