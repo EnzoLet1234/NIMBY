@@ -50,37 +50,37 @@
     <section id="accueil" class="hero">
       <div class="hero-bg-grid" aria-hidden="true"></div>
       <div class="container hero-content">
-        <span class="badge reveal">Étude des controverses • Yvelines (78)</span>
+        <span class="badge reveal">Étude des controverses • Guitrancourt (78)</span>
         <h1 class="reveal reveal-delay-1">
-          640 habitants face aux déchets du Grand Paris :
-          <span class="highlight">réflexe NIMBY ou injustice territoriale ?</span>
+          +50 000 t/an de déchets dangereux à Guitrancourt :
+          <span class="highlight">réflexe NIMBY ou saturation territoriale ?</span>
         </h1>
         <p class="hero-lead reveal reveal-delay-2">
-          Cartographie interactive de la controverse autour de l'accumulation des sites de stockage de déchets à Guitrancourt.
+          Analyse de la controverse autour du projet d'extension de capacité d'EMTA (Veolia) : hausse du stockage (+50 000 t/an) et nouvelle unité de stabilisation entraînant un passage en Seveso seuil haut, à 500 m d'un village de 646 habitants.
         </p>
 
         <div class="hero-actions reveal reveal-delay-3">
-          <a href="#territoire" class="btn btn-primary">Explorer la carte</a>
-          <a href="#arene" class="btn btn-outline">Analyser le NIMBY</a>
+          <a href="#territoire" class="btn btn-primary">Voir l'emprise sur la carte</a>
+          <a href="#arene" class="btn btn-outline">Analyser le prisme NIMBY</a>
         </div>
 
-        <!-- Chiffres clés animés -->
+        <!-- Chiffres clés vérifiés -->
         <div class="kpi-grid reveal reveal-delay-3">
           <div class="kpi-card">
             <span class="kpi-number stat-number" data-target="646">0</span>
             <span class="kpi-label">Habitants à Guitrancourt</span>
           </div>
           <div class="kpi-card">
-            <span class="kpi-number stat-number" data-target="250000" data-suffix=" t/an">0</span>
-            <span class="kpi-label">Déchets dangereux visés (EMTA)</span>
+            <span class="kpi-number stat-number" data-target="50000" data-prefix="+" data-suffix=" t/an">0</span>
+            <span class="kpi-label">Hausse ISDD (200k → 250k t/an, max 300k)</span>
           </div>
           <div class="kpi-card">
             <span class="kpi-number stat-number" data-target="50000" data-suffix=" t/an">0</span>
-            <span class="kpi-label">Unité de stabilisation provisoire</span>
+            <span class="kpi-label">Unité de stabilisation (Seveso seuil haut)</span>
           </div>
           <div class="kpi-card">
             <span class="kpi-number stat-number" data-target="2040">0</span>
-            <span class="kpi-label">Horizon de remise en état</span>
+            <span class="kpi-label">Fin d'exploitation autorisée</span>
           </div>
         </div>
       </div>
@@ -92,12 +92,11 @@
         <div class="section-header reveal">
           <span class="section-tag">01 • Spatialisation du conflit</span>
           <h2>Le « BackYard » sous tension</h2>
-          <p>Explorez les emprises réelles (ICPE, ISDI, extension et site EMTA) en vue satellite ou plan. Cliquez sur une zone pour afficher ses données.</p>
+          <p>Visualisez le site EMTA au cœur de la controverse (+50 000 t/an et Seveso seuil haut) et son cumul avec la carrière voisine d'Heidelberg Materials.</p>
         </div>
 
         <div class="map-wrapper reveal">
           <aside class="map-sidebar">
-            <!-- Sélecteur de vue rapide -->
             <div class="map-control-group">
               <h3>Échelle d'observation</h3>
               <div class="map-zoom-btns">
@@ -106,7 +105,6 @@
               </div>
             </div>
 
-            <!-- Bascule Satellite / Plan -->
             <div class="map-control-group">
               <h3>Fond de carte</h3>
               <div class="map-zoom-btns">
@@ -115,13 +113,17 @@
               </div>
             </div>
 
-            <!-- Filtres de couches -->
             <div class="map-control-group">
               <h3>Couches & Emprises</h3>
               <div class="map-filters">
+                <label class="filter-check filter-check-highlight">
+                  <input type="checkbox" class="map-layer-toggle" value="emta" checked />
+                  <span class="swatch swatch-emta"></span>
+                  <span><strong>Projet EMTA (+50k t/an)</strong><br><small>ISDD 76 ha • Seveso seuil haut</small></span>
+                </label>
                 <label class="filter-check">
                   <input type="checkbox" class="map-layer-toggle" value="icpe" checked />
-                  <span class="swatch swatch-icpe"></span> Emprise ICPE / Carrière (112,6 ha)
+                  <span class="swatch swatch-icpe"></span> Carrière Heidelberg (112,6 ha)
                 </label>
                 <label class="filter-check">
                   <input type="checkbox" class="map-layer-toggle" value="isdi" checked />
@@ -130,10 +132,6 @@
                 <label class="filter-check">
                   <input type="checkbox" class="map-layer-toggle" value="extension" checked />
                   <span class="swatch swatch-ext"></span> Extension ISDI (9,5 ha)
-                </label>
-                <label class="filter-check">
-                  <input type="checkbox" class="map-layer-toggle" value="emta" checked />
-                  <span class="swatch swatch-emta"></span> Site EMTA / Veolia (ISDD)
                 </label>
                 <label class="filter-check">
                   <input type="checkbox" class="map-layer-toggle" value="bourg" checked />
@@ -147,8 +145,8 @@
             </div>
 
             <div class="map-legend-box">
-              <strong>Lecture NIMBY :</strong>
-              <p>Les premières habitations du bourg se situent à moins de 500 m de la carrière, au cœur d'un maillage reliant Gargenville, Issou et Limay.</p>
+              <strong>Cœur de la controverse :</strong>
+              <p>EMTA souhaite stabiliser 50 000 t/an sur place (suite à la saturation de Limay) et porter l'enfouissement à 250 000 t/an en moyenne (300 000 t/an max), sans étendre ses 76 ha.</p>
             </div>
           </aside>
 

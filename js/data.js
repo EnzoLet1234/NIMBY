@@ -1,40 +1,49 @@
-// =========================================================================
-// FICHIER DE DONNÉES CENTRALISÉ
-// Pour modifier ou enrichir le contenu du site, éditez uniquement ce fichier.
-// =========================================================================
-
 const SITE_DATA = {
-  // 1. Points de la carte interactive (Leaflet)
-  // 1A. Polygones réels de la carte (calés sur Guitrancourt Est)
+  // 1A. Polygones recalés sur la vue satellite de Guitrancourt
   mapPolygons: [
     {
-      layer: "icpe",
-      name: "Emprise ICPE — Carrière actuelle (Zones 1 & 2)",
-      tag: "Heidelberg Materials (ex-Calcia)",
-      label: "Carrière / ICPE (112,6 ha)",
-      labelCoords: [49.0126, 1.7878],
-      style: { color: "#dc2626", weight: 2.5, dashArray: "6, 5", fillColor: "#dc2626", fillOpacity: 0.12 },
-      description: "Périmètre total de 112,6 ha (103,1 ha d'ancienne carrière calcaire exploitée jusqu'en 2021). Zone 1 (nord-ouest) : remblayage de 900 000 m³ pour remise en état.",
+      layer: "emta",
+      name: "Site EMTA (SARPI-Veolia) — Projet +50 000 t/an",
+      tag: "Cœur de la controverse • Seveso seuil haut",
+      label: "EMTA (+50k t/an • Seveso)",
+      labelCoords: [49.0086, 1.7892],
+      style: { color: "#7c3aed", weight: 3, fillColor: "#8b5cf6", fillOpacity: 0.34 },
+      description: "Emprise inchangée de 76 ha (dont 69 ha de stockage) exploitée jusqu'en 2040. Le projet vise : (1) une unité provisoire de stabilisation de 50 000 t/an entraînant le classement Seveso seuil haut, et (2) une hausse de l'ISDD de +50 000 t/an (200k → 250k t/an en moyenne, plafond 250k → 300k t/an).",
       coords: [
-        [49.0148, 1.7875], [49.0132, 1.7898], [49.0110, 1.7905],
-        [49.0096, 1.7924], [49.0108, 1.7945], [49.0095, 1.7988],
-        [49.0066, 1.7992], [49.0046, 1.7955], [49.0056, 1.7916],
-        [49.0038, 1.7896], [49.0014, 1.7874], [49.0026, 1.7844],
-        [49.0046, 1.7866], [49.0068, 1.7888], [49.0086, 1.7892],
-        [49.0105, 1.7875], [49.0108, 1.7845], [49.0130, 1.7852]
+        [49.0128, 1.7916], [49.0114, 1.7938], [49.0096, 1.7915],
+        [49.0074, 1.7896], [49.0046, 1.7866], [49.0052, 1.7848],
+        [49.0082, 1.7852], [49.0102, 1.7882]
+      ]
+    },
+    {
+      layer: "icpe",
+      name: "Emprise ICPE — Carrière Heidelberg Materials (Zones 1 & 2)",
+      tag: "Contexte de cumul • 112,6 ha",
+      label: "Carrière / ICPE (112,6 ha)",
+      labelCoords: [49.0155, 1.7910],
+      style: { color: "#dc2626", weight: 2.5, dashArray: "6, 5", fillColor: "#dc2626", fillOpacity: 0.10 },
+      description: "Ancienne carrière calcaire (103,1 ha exploités jusqu'en 2021 + 9,5 ha d'extension). Zone 1 (nord) : remblayage de 900 000 m³. Ce dossier parallèle alimente le sentiment d'accumulation chez les riverains.",
+      coords: [
+        [49.0182, 1.7924], [49.0172, 1.7945], [49.0145, 1.7932],
+        [49.0124, 1.7952], [49.0118, 1.7975], [49.0102, 1.8035],
+        [49.0068, 1.8030], [49.0054, 1.7975], [49.0056, 1.7925],
+        [49.0022, 1.7882], [49.0008, 1.7865], [49.0022, 1.7840],
+        [49.0044, 1.7865], [49.0074, 1.7896], [49.0096, 1.7915],
+        [49.0114, 1.7938], [49.0128, 1.7916], [49.0122, 1.7875],
+        [49.0150, 1.7880]
       ]
     },
     {
       layer: "isdi",
-      name: "Projet ISDI — Zone 2 (Guitrancourt 2)",
-      tag: "Déchets inertes",
+      name: "Projet ISDI — Zone 2 (Heidelberg Materials)",
+      tag: "Déchets inertes • 28,8 ha",
       label: "ISDI Zone 2 (28,8 ha)",
-      labelCoords: [49.0082, 1.7952],
+      labelCoords: [49.0090, 1.7985],
       style: { color: "#2563eb", weight: 2.5, fillColor: "#3b82f6", fillOpacity: 0.22 },
-      description: "Installation de Stockage de Déchets Inertes prévue sur 28,8 ha (3 000 000 m³ de matériaux, notamment issus des chantiers du Grand Paris).",
+      description: "Projet parallèle de stockage de déchets inertes sur 28,8 ha (3 000 000 m³ issus notamment des chantiers du Grand Paris).",
       coords: [
-        [49.0102, 1.7940], [49.0096, 1.7978], [49.0072, 1.7985],
-        [49.0060, 1.7952], [49.0064, 1.7924], [49.0085, 1.7928]
+        [49.0116, 1.7965], [49.0102, 1.8022], [49.0076, 1.8024],
+        [49.0066, 1.7978], [49.0072, 1.7945], [49.0096, 1.7948]
       ]
     },
     {
@@ -42,30 +51,17 @@ const SITE_DATA = {
       name: "Extension ISDI (Sud Zone 2)",
       tag: "Extension 9,5 ha",
       label: "Extension (9,5 ha)",
-      labelCoords: [49.0056, 1.7952],
-      style: { color: "#e11d48", weight: 1.8, fillColor: "#f43f5e", fillOpacity: 0.45 },
-      description: "Extension de 9,5 ha sur d'anciennes parcelles réhabilitées afin de réaliser l'ISDI en Zone 2.",
+      labelCoords: [49.0062, 1.7990],
+      style: { color: "#e11d48", weight: 1.8, fillColor: "#f43f5e", fillOpacity: 0.42 },
+      description: "Extension de 9,5 ha sur d'anciennes parcelles réhabilitées pour permettre la création de l'ISDI en Zone 2.",
       coords: [
-        [49.0064, 1.7924], [49.0060, 1.7952], [49.0068, 1.7974],
-        [49.0050, 1.7966], [49.0047, 1.7938], [49.0056, 1.7918]
-      ]
-    },
-    {
-      layer: "emta",
-      name: "Site EMTA (SARPI-Veolia) — Les Croix Blanches",
-      tag: "ISDD • Déchets dangereux",
-      label: "EMTA / Veolia (ISDD)",
-      labelCoords: [49.0068, 1.7885],
-      style: { color: "#7c3aed", weight: 2.5, fillColor: "#8b5cf6", fillOpacity: 0.32 },
-      description: "Installation mitoyenne à la carrière : passage visé de 200 000 à 250 000 t/an (max 300 000 t/an) jusqu'en 2040 + unité provisoire de stabilisation (50 000 t/an).",
-      coords: [
-        [49.0102, 1.7890], [49.0086, 1.7916], [49.0055, 1.7892],
-        [49.0038, 1.7866], [49.0056, 1.7852], [49.0084, 1.7870]
+        [49.0072, 1.7945], [49.0066, 1.7978], [49.0076, 1.8015],
+        [49.0056, 1.8005], [49.0053, 1.7968], [49.0058, 1.7938]
       ]
     }
-  ],    
+  ],
 
-  // 1B. Points géographiques (Bourg, eau et sites voisins)
+  // 1B. Points géographiques
   mapPoints: [
     {
       layer: "bourg",
@@ -73,39 +69,39 @@ const SITE_DATA = {
       tag: "646 habitants",
       coords: [49.0094, 1.7778],
       color: "#1b4332",
-      description: "Cœur du village rural, situé entre 300 m et 600 m à l'ouest des emprises industrielles."
+      description: "Village rural situé à ~450–600 m à l'ouest de l'ISDD EMTA, dont les habitants contestent le cumul des risques et des nuisances."
     },
     {
       layer: "context",
       name: "Captage d'eau potable (AEP) de Gargenville",
-      tag: "Enjeu hydrogéologique",
+      tag: "Vulnérabilité eau (CVO2)",
       coords: [48.9965, 1.8050],
       color: "#d97706",
-      description: "Captage alimenté par la nappe de la Craie, situé à ~1,5 km au sud-est à l'aval hydraulique."
+      description: "Captage alimenté par la nappe de la Craie à ~1,5 km au sud-est (aval hydraulique). Un second captage AEP se trouve dans un rayon de 2 km."
     },
     {
       layer: "context",
       name: "Ancienne carrière des Blancs Soleils",
-      tag: "Mémoire industrielle",
+      tag: "Cumul territorial",
       coords: [48.9989, 1.7642],
       color: "#d97706",
-      description: "Autre ancienne carrière à proximité immédiate au sud-ouest de Guitrancourt."
+      description: "Ancienne carrière au sud-ouest du village, rappelant l'historique extractif et de remblaiement du secteur."
     },
     {
       layer: "context",
-      name: "Unité EMTA / Limay (Zone portuaire)",
-      tag: "Site saturé",
+      name: "Site SARPI-Veolia de Limay",
+      tag: "Unité saturée",
       coords: [48.9830, 1.7350],
       color: "#d97706",
-      description: "La saturation de l'unité de stabilisation de Limay est l'argument clé justifiant le report vers Guitrancourt."
+      description: "La saturation de l'usine de stabilisation de Limay motive l'implantation de la nouvelle unité de 50 000 t/an directement à Guitrancourt."
     },
     {
       layer: "context",
       name: "Ancien site SITA (Brueil-en-Vexin)",
-      tag: "Cumul territorial",
+      tag: "Mémoire des déchets",
       coords: [49.0260, 1.8120],
       color: "#d97706",
-      description: "Ancienne installation de stockage de déchets non dangereux (fermée en 2014), illustrant le cumul historique sur le secteur."
+      description: "Ancienne ISDND fermée en 2014 au nord-est, illustrant la concentration historique d'installations sur ce territoire."
     },
     {
       layer: "context",
@@ -113,7 +109,7 @@ const SITE_DATA = {
       tag: "Commune limitrophe",
       coords: [48.9890, 1.7920],
       color: "#52606d",
-      description: "Commune voisine concernée par les accès routiers et la limite sud de la carrière."
+      description: "Commune voisine traversée par les axes d'accès (RD 190) vers les sites industriels."
     }
   ],
 
@@ -121,143 +117,143 @@ const SITE_DATA = {
   actors: [
     {
       id: "emta",
-      name: "EMTA (filiale de Veolia)",
+      name: "EMTA (SARPI / Groupe Veolia)",
       category: "industriel",
       categoryLabel: "Industriel",
-      role: "Exploitant de l'ISDD de Guitrancourt",
-      stance: "Porteur du projet d'extension de capacité",
-      details: "Met en avant la continuité du site sans extension foncière et la nécessité de traiter les déchets ultimes d'Île-de-France."
+      role: "Exploitant du site (720 000 t/an déjà autorisées)",
+      stance: "Porteur du projet +50 000 t/an",
+      details: "Demande l'ajout d'une unité de stabilisation de 50 000 t/an (classant le site Seveso seuil haut) et une hausse de l'ISDD de 200k à 250k t/an en moyenne (300k max) pour pallier la saturation de Limay, sans extension foncière ni report de 2040."
     },
     {
       id: "heidelberg",
-      name: "Heidelberg Materials",
+      name: "Heidelberg Materials (ex-Calcia)",
       category: "industriel",
       categoryLabel: "Industriel",
-      role: "Ex-Calcia, gestionnaire de la carrière",
-      stance: "Porteur du projet de remblaiement (ISDI)",
-      details: "Prévoit la remise en état de l'ancienne carrière calcaire d'ici 2040 par apport de déchets inertes."
+      role: "Exploitant de la carrière voisine (112,6 ha)",
+      stance: "Porteur du dossier parallèle ISDI",
+      details: "Prévoit le remblaiement de Zone 1 et une ISDI de 28,8 ha (+9,5 ha d'extension) en Zone 2. Bien que distinct d'EMTA, ce dossier simultané amplifie le sentiment d'encerclement."
     },
     {
       id: "ange",
-      name: "Association ANGE",
+      name: "Association ANGE & riverains",
       category: "civil",
       categoryLabel: "Société civile",
       role: "Alliance Nature Guitrancourt et Environs",
-      stance: "Opposition structurée au cumul des déchets",
-      details: "Conteste l'étiquette NIMBY en dénonçant un effet cumulatif, les risques sanitaires et la transformation du village en zone de sacrifice."
+      stance: "Opposition au passage Seveso et au +50k t/an",
+      details: "Refuse l'étiquette NIMBY : dénonce un effet cumulatif sur un village de 646 habitants, les risques sur la nappe et la santé, et l'inégalité entre métropole et commune rurale."
     },
     {
       id: "mairie",
-      name: "Mairie de Guitrancourt",
+      name: "Mairie de Guitrancourt & Député",
       category: "elu",
       categoryLabel: "Élu local",
-      role: "Collectivité locale",
-      stance: "Opposée au projet EMTA",
-      details: "Refus de permis de construire, PV pour travaux sans autorisation, défense du cadre de vie rural."
+      role: "Collectivité locale & relais parlementaire",
+      stance: "Opposition ferme au projet EMTA",
+      details: "Refus de permis de construire, PV pour travaux sans autorisation (janvier 2026) et question écrite n°12494 du député B. Lucas-Lundy sur les risques eau/santé et le PNR du Vexin."
     },
     {
       id: "prefecture",
       name: "Préfecture des Yvelines & DRIEAT",
       category: "etat",
       categoryLabel: "État & Régulation",
-      role: "Autorité environnementale et décisionnaire",
-      stance: "A autorisé la poursuite/modification (août 2026)",
-      details: "Arbitre entre l'intérêt général régional de gestion des déchets et les prescriptions environnementales ICPE."
+      role: "Instruction ICPE et décision finale",
+      stance: "Autorisation délivrée le 10 août 2026",
+      details: "Met en avant l'urgence francilienne (plus de 700 000 t/an de déchets dangereux en Île-de-France) et impose des contrôles renforcés (odeurs, biogaz, rétention des eaux)."
     },
     {
       id: "medias",
-      name: "Presse nationale & locale (Reporterre, etc.)",
+      name: "Médias (Reporterre, TV78, presse locale)",
       category: "media",
       categoryLabel: "Média",
-      role: "Caisse de résonance",
-      stance: "Médiatisation de l'asymétrie métropole / village",
-      details: "A contribué à sortir le conflit de l'échelle municipale en popularisant le cas des « 640 habitants »."
+      role: "Médiatisation de la controverse",
+      stance: "Mise en lumière de l'asymétrie territoriale",
+      details: "Popularise le contraste « 640 habitants face aux montagnes de déchets du Grand Paris », transformant une enquête ICPE en débat public."
     }
   ],
 
-  // 3. Axes de l'Arène des arguments (Prisme NIMBY)
+  // 3. Axes de l'Arène des arguments (Prisme NIMBY centré sur le +50k t/an)
   arenaAxes: [
     {
       id: "echelle",
-      title: "1. Échelle d'intérêt",
-      proTitle: "Impératif régional & intérêt général",
+      title: "1. Nécessité francilienne vs Injustice locale",
+      proTitle: "Logique d'intérêt général régional",
       proPoints: [
-        "L'Île-de-France génère des volumes massifs de déchets dangereux.",
-        "Saturation de l'installation voisine de Limay.",
-        "Nécessité d'une filière de proximité pour éviter les transports longue distance."
+        "L'Île-de-France génère ~760 000 t/an de déchets dangereux et manque d'exutoires.",
+        "L'usine de stabilisation de Limay est saturée face aux nouveaux flux (REFIOM, biomasse, batteries).",
+        "Traiter sur place 50 000 t/an réduit les transferts et sécurise une filière déjà existante depuis 1984."
       ],
-      conTitle: "Injustice territoriale & saturation locale",
+      conTitle: "Critique de la « zone de sacrifice »",
       conPoints: [
-        "Disproportion démographique : 646 habitants face aux déchets de la métropole.",
-        "Sentiment d'être traité comme une « poubelle du Grand Paris ».",
-        "Effet cumulatif entre plusieurs sites industriels sur une même commune."
+        "Le site accueille déjà 720 000 t/an tous déchets confondus pour un village de 646 habitants.",
+        "Les opposants refusent l'étiquette NIMBY : Guitrancourt assume déjà sa part depuis 40 ans.",
+        "Le cumul avec le projet voisin Heidelberg donne le sentiment de devenir « la poubelle du Grand Paris »."
       ]
     },
     {
       id: "risque",
-      title: "2. Risque & Technique",
-      proTitle: "Maîtrise industrielle et encadrement",
+      title: "2. Changement de seuil : Seveso seuil haut",
+      proTitle: "Maîtrise technique revendiquée",
       proPoints: [
-        "Procédés de stabilisation et confinement des déchets ultimes.",
-        "Suivi réglementaire strict (ICPE) et réhabilitation finale prévue à terme.",
-        "Pas d'extension géographique de l'emprise existante."
+        "Emprise foncière inchangée (76 ha) et date de fermeture maintenue à 2040.",
+        "Reprofilage de casiers existants et fonctionnement en circuit fermé (bassins de rétention).",
+        "Prescriptions préfectorales renforcées sur les odeurs, lixiviats et le suivi environnemental."
       ],
-      conTitle: "Incertitudes sanitaires & défiance",
+      conTitle: "Risque accru et défiance sanitaire",
       conPoints: [
-        "Inquiétudes liées au seuil Seveso et à la nature des résidus (REFIOM, batteries).",
-        "Craintes sur la protection des nappes phréatiques et la qualité de l'air.",
-        "Rupture de confiance suite à des épisodes contentieux (travaux, avis ABF)."
+        "L'unité de 50 000 t/an fait basculer le site en Seveso seuil haut par règle de cumul.",
+        "Zone identifiée en vulnérabilité eau (CVO2) avec deux captages AEP dans un rayon de 2 km.",
+        "Perte de confiance après des travaux démarrés sans autorisation préalable (PV de janvier 2026)."
       ]
     },
     {
       id: "democratie",
-      title: "3. Démocratie locale",
-      proTitle: "Procédure légale respectée",
+      title: "3. Consultation publique & décision préfectorale",
+      proTitle: "Cadre réglementaire respecté",
       proPoints: [
-        "Organisation de consultations publiques réglementaires.",
-        "Expertise instruite par les services déconcentrés de l'État.",
-        "Cadre fixé par le Code de l'environnement et la loi Industrie verte."
+        "Consultation publique menée de nov. 2025 à fév. 2026 sous l'égide d'un commissaire enquêteur.",
+        "Avis favorables du commissaire enquêteur, de la DRIEAT et du CODERST.",
+        "Création de 6 emplois permanents (46 au total sur le site)."
       ],
-      conTitle: "Sentiment de passage en force",
+      conTitle: "Asymétrie et sentiment de passage en force",
       conPoints: [
-        "Impression que les avis locaux (mairie, riverains, ABF) pèsent peu face à l'État.",
-        "Asymétrie technique entre dossiers de centaines de pages et citoyens bénévoles.",
-        "Difficulté à faire entendre une alternative globale (réduction des déchets)."
+        "Double consultation (EMTA + Heidelberg) jugée opaque et difficile à décrypter pour des bénévoles.",
+        "Opposition unanime des riverains en réunion publique peu suivie d'effet sur la décision finale.",
+        "Contournement des avis défavorables locaux (mairie, ABF) par l'arrêté préfectoral d'août 2026."
       ]
     }
   ],
 
-  // 4. Chronologie (à affiner avec vos dates exactes)
+  // 4. Chronologie
   timeline: [
     {
-      date: "Jusqu'en 2021",
-      title: "Fin d'exploitation de la carrière calcaire",
-      desc: "L'histoire extractive du site ouvre la voie aux projets de remblaiement et de réaménagement."
+      date: "1984 – 2024",
+      title: "Un site déjà structurant (720 000 t/an autorisées)",
+      desc: "Exploitation historique de l'ISDD EMTA (200 000 t/an en moyenne, 250 000 t/an max de déchets dangereux), avec fin d'activité fixée à 2040. Jusqu'ici, la stabilisation se faisait à Limay."
     },
     {
-      date: "Novembre 2025 – Février 2026",
-      title: "Consultations publiques & mobilisation citoyenne",
-      desc: "Lancement des consultations sur les projets EMTA et Heidelberg. Naissance de la mobilisation locale et création de l'association ANGE."
+      date: "20 nov. 2025 – 19 fév. 2026",
+      title: "Consultation publique sur l'agrandissement (+50 000 t/an)",
+      desc: "EMTA demande l'unité de stabilisation de 50 000 t/an (passage Seveso seuil haut) et +50 000 t/an en ISDD. Mobilisation citoyenne et naissance de l'association ANGE dès décembre 2025."
     },
     {
-      date: "Janvier 2026",
-      title: "Tensions municipales et relais politique",
-      desc: "La mairie relève des travaux sans autorisation ; le sujet est porté jusqu'à l'Assemblée nationale."
+      date: "Janvier – Mars 2026",
+      title: "Tensions locales et question à l'Assemblée nationale",
+      desc: "La mairie dresse un PV pour travaux sans autorisation ; le député B. Lucas-Lundy interpelle le ministère sur les risques eau, santé et le classement Seveso."
     },
     {
       date: "Été – Automne 2026",
-      title: "Médiatisation nationale et bataille juridique",
-      desc: "Publication de l'enquête de Reporterre, délivrance de l'arrêté préfectoral (août 2026) et bras de fer autour du permis et du foncier."
+      title: "Médiatisation nationale et autorisation préfectorale",
+      desc: "Enquête de Reporterre, puis arrêté préfectoral du 10 août 2026 autorisant les 250 000 t/an (300k max) et l'unité de stabilisation, suivi d'un bras de fer juridique local."
     }
   ],
 
   // 5. Glossaire technique
   glossary: [
-    { term: "NIMBY", def: "« Not In My BackYard » (Pas dans mon jardin). Concept désignant l'opposition des riverains à un équipement d'intérêt collectif jugé nuisible à proximité." },
-    { term: "NIABY", def: "« Not In Anyone's BackYard ». Élargissement de la critique : le projet n'est refusé nulle part en tant que tel, mais pour le modèle de production de déchets qu'il perpétue." },
-    { term: "ISDD / ISDI", def: "Installation de Stockage de Déchets Dangereux (EMTA) vs Déchets Inertes (remblais carrière Heidelberg)." },
-    { term: "ICPE", def: "Installation Classée pour la Protection de l'Environnement : statut juridique encadrant les sites industriels à risques." },
-    { term: "REFIOM", def: "Résidus d'Épuration des Fumées d'Incinération des Ordures Ménagères, classés comme déchets dangereux." },
-    { term: "Seveso (seuil haut)", def: "Directive européenne classant les sites industriels présentant les risques d'accidents majeurs les plus élevés." }
+    { term: "NIMBY", def: "« Not In My BackYard » (Pas dans mon jardin). Terme souvent utilisé pour qualifier un refus riverain d'équipement collectif ; contesté à Guitrancourt au nom du cumul déjà subi." },
+    { term: "NIABY", def: "« Not In Anyone's BackYard ». Refus fondé non sur l'égoïsme local, mais sur la critique environnementale globale de la filière." },
+    { term: "Stabilisation (50 000 t/an)", def: "Mélange des déchets dangereux (REFIOM, cendres) avec des réactifs et liants pour bloquer la migration des polluants avant enfouissement." },
+    { term: "Seveso seuil haut", def: "Classement européen des sites présentant les risques d'accidents industriels majeurs les plus élevés (atteint ici par règle de cumul avec la nouvelle unité)." },
+    { term: "ISDD / ISDI", def: "Installation de Stockage de Déchets Dangereux (EMTA) vs Déchets Inertes (projet carrière Heidelberg Materials)." },
+    { term: "REFIOM", def: "Résidus d'Épuration des Fumées d'Incinération des Ordures Ménagères : déchets ultimes dangereux nécessitant une stabilisation." }
   ]
 };

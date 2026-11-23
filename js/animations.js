@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. Compteurs animés (KPIs du Hero)
   const animateCounter = (el) => {
     const target = Number(el.dataset.target) || 0;
+    const prefix = el.dataset.prefix || "";
     const suffix = el.dataset.suffix || "";
     const duration = 1400;
     const startTime = performance.now();
@@ -33,10 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const update = (now) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Courbe ease-out
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.floor(eased * target);
-      el.textContent = current.toLocaleString("fr-FR") + suffix;
+      el.textContent = prefix + current.toLocaleString("fr-FR") + suffix;
       if (progress < 1) requestAnimationFrame(update);
     };
 

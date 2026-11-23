@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialisation centrée entre le bourg de Guitrancourt et la carrière
   const views = {
-    quarry: { center: [49.0085, 1.7875], zoom: 14 },
+    quarry: { center: [49.0095, 1.7905], zoom: 14 },
     territory: { center: [49.0040, 1.7780], zoom: 12 }
   };
 
@@ -80,6 +80,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+
+  // Point focal animé : future unité de stabilisation (+50 000 t/an) sur le site EMTA
+  const emtaPulseIcon = L.divIcon({
+    className: "",
+    html: '<div class="pulse-marker" title="Projet +50 000 t/an (EMTA)"></div>',
+    iconSize: [18, 18],
+    iconAnchor: [9, 9]
+  });
+
+  L.marker([49.0098, 1.7902], { icon: emtaPulseIcon })
+    .bindPopup(
+      buildPopupHtml({
+        tag: "Projet contesté",
+        name: "Nouvelle unité de stabilisation (50 000 t/an) & +50 000 t/an ISDD",
+        description: "Épicentre de la controverse : passage en Seveso seuil haut et hausse de la capacité moyenne d'enfouissement de 200 000 à 250 000 t/an (max 300 000 t/an)."
+      })
+    )
+    .addTo(layerGroups.emta);
 
   // 2. Cercles de distance NIMBY autour du bourg (500 m et 2 km)
   L.circle([49.0094, 1.7778], {
