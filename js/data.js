@@ -1,18 +1,27 @@
 const SITE_DATA = {
   // 1A. Polygones recalés sur la vue satellite de Guitrancourt
+  // 1A. Polygones recalés au plus près de la carte SIG & vue satellite
   mapPolygons: [
     {
       layer: "emta",
       name: "Site EMTA (SARPI-Veolia) — Projet +50 000 t/an",
       tag: "Cœur de la controverse • Seveso seuil haut",
       label: "EMTA (+50k t/an • Seveso)",
-      labelCoords: [49.0086, 1.7892],
-      style: { color: "#7c3aed", weight: 3, fillColor: "#8b5cf6", fillOpacity: 0.34 },
+      labelCoords: [49.0084, 1.7886],
+      style: { color: "#7c3aed", weight: 2.5, fillColor: "#8b5cf6", fillOpacity: 0.28 },
       description: "Emprise inchangée de 76 ha (dont 69 ha de stockage) exploitée jusqu'en 2040. Le projet vise : (1) une unité provisoire de stabilisation de 50 000 t/an entraînant le classement Seveso seuil haut, et (2) une hausse de l'ISDD de +50 000 t/an (200k → 250k t/an en moyenne, plafond 250k → 300k t/an).",
       coords: [
-        [49.0128, 1.7916], [49.0114, 1.7938], [49.0096, 1.7915],
-        [49.0074, 1.7896], [49.0046, 1.7866], [49.0052, 1.7848],
-        [49.0082, 1.7852], [49.0102, 1.7882]
+        [49.0126, 1.7915],
+        [49.0112, 1.7939],
+        [49.0094, 1.7920],
+        [49.0080, 1.7935],
+        [49.0064, 1.7918],
+        [49.0055, 1.7896],
+        [49.0044, 1.7868],
+        [49.0048, 1.7849],
+        [49.0076, 1.7846],
+        [49.0102, 1.7878],
+        [49.0114, 1.7896]
       ]
     },
     {
@@ -20,17 +29,32 @@ const SITE_DATA = {
       name: "Emprise ICPE — Carrière Heidelberg Materials (Zones 1 & 2)",
       tag: "Contexte de cumul • 112,6 ha",
       label: "Carrière / ICPE (112,6 ha)",
-      labelCoords: [49.0155, 1.7910],
-      style: { color: "#dc2626", weight: 2.5, dashArray: "6, 5", fillColor: "#dc2626", fillOpacity: 0.10 },
+      labelCoords: [49.0156, 1.7910],
+      style: { color: "#dc2626", weight: 2.5, dashArray: "6, 5", fillColor: "#dc2626", fillOpacity: 0.08 },
       description: "Ancienne carrière calcaire (103,1 ha exploités jusqu'en 2021 + 9,5 ha d'extension). Zone 1 (nord) : remblayage de 900 000 m³. Ce dossier parallèle alimente le sentiment d'accumulation chez les riverains.",
       coords: [
-        [49.0182, 1.7924], [49.0172, 1.7945], [49.0145, 1.7932],
-        [49.0124, 1.7952], [49.0118, 1.7975], [49.0102, 1.8035],
-        [49.0068, 1.8030], [49.0054, 1.7975], [49.0056, 1.7925],
-        [49.0022, 1.7882], [49.0008, 1.7865], [49.0022, 1.7840],
-        [49.0044, 1.7865], [49.0074, 1.7896], [49.0096, 1.7915],
-        [49.0114, 1.7938], [49.0128, 1.7916], [49.0122, 1.7875],
-        [49.0150, 1.7880]
+        [49.0182, 1.7924],
+        [49.0172, 1.7946],
+        [49.0144, 1.7934],
+        [49.0124, 1.7956],
+        [49.0126, 1.7988],
+        [49.0108, 1.8032],
+        [49.0084, 1.8038],
+        [49.0064, 1.8018],
+        [49.0056, 1.7980],
+        [49.0052, 1.7948],
+        [49.0058, 1.7930],
+        [49.0022, 1.7885],
+        [49.0007, 1.7866],
+        [49.0021, 1.7840],
+        [49.0045, 1.7866],
+        [49.0058, 1.7894],
+        [49.0080, 1.7932],
+        [49.0112, 1.7939],
+        [49.0126, 1.7915],
+        [49.0116, 1.7888],
+        [49.0118, 1.7864],
+        [49.0148, 1.7878]
       ]
     },
     {
@@ -38,12 +62,17 @@ const SITE_DATA = {
       name: "Projet ISDI — Zone 2 (Heidelberg Materials)",
       tag: "Déchets inertes • 28,8 ha",
       label: "ISDI Zone 2 (28,8 ha)",
-      labelCoords: [49.0090, 1.7985],
-      style: { color: "#2563eb", weight: 2.5, fillColor: "#3b82f6", fillOpacity: 0.22 },
+      labelCoords: [49.0092, 1.7984],
+      style: { color: "#2563eb", weight: 2.5, fillColor: "#3b82f6", fillOpacity: 0.20 },
       description: "Projet parallèle de stockage de déchets inertes sur 28,8 ha (3 000 000 m³ issus notamment des chantiers du Grand Paris).",
       coords: [
-        [49.0116, 1.7965], [49.0102, 1.8022], [49.0076, 1.8024],
-        [49.0066, 1.7978], [49.0072, 1.7945], [49.0096, 1.7948]
+        [49.0114, 1.7964],
+        [49.0106, 1.8016],
+        [49.0084, 1.8024],
+        [49.0068, 1.8004],
+        [49.0066, 1.7980],
+        [49.0074, 1.7950],
+        [49.0094, 1.7948]
       ]
     },
     {
@@ -51,12 +80,18 @@ const SITE_DATA = {
       name: "Extension ISDI (Sud Zone 2)",
       tag: "Extension 9,5 ha",
       label: "Extension (9,5 ha)",
-      labelCoords: [49.0062, 1.7990],
-      style: { color: "#e11d48", weight: 1.8, fillColor: "#f43f5e", fillOpacity: 0.42 },
+      labelCoords: [49.0061, 1.7985],
+      style: { color: "#e11d48", weight: 1.8, fillColor: "#f43f5e", fillOpacity: 0.38 },
       description: "Extension de 9,5 ha sur d'anciennes parcelles réhabilitées pour permettre la création de l'ISDI en Zone 2.",
       coords: [
-        [49.0072, 1.7945], [49.0066, 1.7978], [49.0076, 1.8015],
-        [49.0056, 1.8005], [49.0053, 1.7968], [49.0058, 1.7938]
+        [49.0074, 1.7950],
+        [49.0066, 1.7980],
+        [49.0068, 1.8004],
+        [49.0080, 1.8020],
+        [49.0064, 1.8018],
+        [49.0056, 1.7980],
+        [49.0052, 1.7948],
+        [49.0060, 1.7938]
       ]
     }
   ],
